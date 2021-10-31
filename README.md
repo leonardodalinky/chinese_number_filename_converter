@@ -7,7 +7,7 @@
 当你看到这样一坨排序后的文件，发现排序都是乱的，是不是很想提起 40m 长的大刀砍死作者：
 ![example](imgs/example.png)
 
-于是我开发了这个小工具，专门用来处理这种逆天的中文数字。
+于是我开发了这个小工具，专门用来处理这种逆天的中文数字.
 
 ## 依赖安装
 ```shell
@@ -37,11 +37,29 @@ optional arguments:
 ```
 
 ## 使用例
+单文件形式:
+```shell
+python main.py 第一讲.pdf 第二讲.pdf
+```
+
+文件夹下所有文件形式:
+```shell
+python main.py 课件/
+```
+
+`*` 通配符方式:
 ```shell
 python main.py *.pdf
+```
+
+`**` 通配符方式，**此方式会匹配当前目录下的所有子目录中的对应文件**:
+```shell
+# **.pdf 通配符会递归地匹配目录和子目录下，所有符合 pattern 的文件
+# 例如 课件/第一讲.pdf 和 课程/作业/第一次.pdf
+python main.py **.pdf
 ```
 
 得到结果：
 ![result](imgs/result.png)
 
-现在看起来舒服了.
+现在看起来舒服了 :)

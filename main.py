@@ -94,17 +94,6 @@ def a2c(s: str) -> str:
     return ret
 
 
-def convert_filename(filepath: str, to_arabic=True):
-    """
-    将路径上的文件修改名称
-
-    :param filepath: 文件路径
-    :param to_arabic: 若为 True，则为中文转阿拉伯；反之为阿拉伯转中文.
-    :return:
-    """
-    pass
-
-
 if __name__ == "__main__":
     # arg parser
     parser = argparse.ArgumentParser(description="将文件名的中文数字与阿拉伯数字互相转化的工具")

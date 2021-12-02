@@ -1,5 +1,4 @@
 import sys
-import os
 import glob
 import argparse
 import chinese2digits as cd
@@ -7,7 +6,16 @@ from pathlib import Path
 from typing import Optional, List
 
 CHINESE_DIGIT = (
-    "零", "一", "二", "三", "四", "五", "六", "七", "八", "九",
+    "零",
+    "一",
+    "二",
+    "三",
+    "四",
+    "五",
+    "六",
+    "七",
+    "八",
+    "九",
 )
 CHINESE_DIGIT_DICT = {
     "0": "零",
@@ -19,7 +27,7 @@ CHINESE_DIGIT_DICT = {
     "6": "六",
     "7": "七",
     "8": "八",
-    "9": "九"
+    "9": "九",
 }
 
 CHINESE_CARRY_DIGIT = (
@@ -97,8 +105,15 @@ def a2c(s: str) -> str:
 if __name__ == "__main__":
     # arg parser
     parser = argparse.ArgumentParser(description="将文件名的中文数字与阿拉伯数字互相转化的工具")
-    parser.add_argument("-t", "--type", type=str, choices=["c2a", "a2c"], default="c2a", action="store",
-                        help="c2a 将中文转为阿拉伯，a2c 将阿拉伯转为中文，默认为 c2a")
+    parser.add_argument(
+        "-t",
+        "--type",
+        type=str,
+        choices=["c2a", "a2c"],
+        default="c2a",
+        action="store",
+        help="c2a 将中文转为阿拉伯，a2c 将阿拉伯转为中文，默认为 c2a",
+    )
     parser.add_argument("paths", type=str, nargs="+", action="store", help="文件或者文件夹的路径，支持通配符")
     if len(sys.argv) <= 1:
         print("请输入参数!")
